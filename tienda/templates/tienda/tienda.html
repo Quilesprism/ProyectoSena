@@ -1,0 +1,42 @@
+{% extends 'proyectoapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+  <div style="float: right;">
+    <!--<p style="color: black;">Total:${{importe_total_carro}}</p>-->
+    {% if request.user.is_authenticated %}
+    {% include "carro/widget.html" %}
+    {% else %}
+    </br></br></br>
+     <div class="alert alert-danger">Debes hacer ingresar para comprar</div> 
+    {% endif %}
+  
+  </div>
+  <div class="row">
+
+  {% for producto in productos %}
+<div class="col-md-3">
+    <div class="card" style="width: 80%; margin: 5px 5px;">
+
+    <img src="{{producto.imagen.url}}" class="card-img-top">
+
+    <div class="card-body" style="text-align:center;">
+      <h6 class="card-title">{{producto.nombre}}</h6>
+      <p class="card-title">$&nbsp;{{producto.precio}}</p>
+    </div>
+    <div class="card-footer text-center">
+      <a href="{% url 'carro:agregar' producto.id %}" class="btn btn-success">Agregar al carrito</a>
+    </div>
+
+
+      </div>
+    </div>
+  
+  {% endfor %}
+</div>
+</div>
+{% endblock %}
+
