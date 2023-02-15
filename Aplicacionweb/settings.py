@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-d78+fmbcb+5ihwe@68l8nq_q*u!)tqrc-*6gxwlcaqx_lc-uhp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'Aplicacionweb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-"""DATABASES = {
+DATABASES = {
    'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Sena',
@@ -93,13 +93,13 @@ WSGI_APPLICATION = 'Aplicacionweb.wsgi.application'
         'HOST': 'localhost', 
         'PORT': ''
     }
-}"""
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
 }
+#DATABASES = {
+   # 'default': {
+    #    'ENGINE': 'django.db.backends.sqlite3',
+    #    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+   # }
+#}
 
 
 
@@ -167,3 +167,6 @@ MESSAGE_TAGS = {
     mensajes_de_error.WARNING: 'warning',
     mensajes_de_error.ERROR: 'danger',
 }
+
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
