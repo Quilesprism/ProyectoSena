@@ -5,7 +5,7 @@ from carrito.carro import Carro
 from servicios.models import Servicio
 def home(request): 
     carro=Carro(request)
-    return render(request, "proyectoapp/home.html")
+    return render(request, "proyectoapp/index.html")
 
 
 def recibo(request): 
