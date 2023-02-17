@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-d78+fmbcb+5ihwe@68l8nq_q*u!)tqrc-*6gxwlcaqx_lc-uhp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = []#'.vercel.app', '.now.sh']
 
 
 # Application definition
@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'Aplicacionweb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-"""""DATABASES = {
+DATABASES = {
    'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Sena',
@@ -94,13 +94,13 @@ WSGI_APPLICATION = 'Aplicacionweb.wsgi.application'
         'PORT': ''
     } 
     
-}""" "" 
-DATABASES = {
+}
+"""""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-}
+}"""""
 
 
 
