@@ -12,5 +12,5 @@ def tienda(request):
     
     return render(request, "tienda/tienda.html", {"productos": productos})
 
-def carro(request):
-    return render(request, "carro/widget.html")
+#def carro(request):
+#    return render(request, "carro/widget.html")

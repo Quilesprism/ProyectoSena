@@ -1,3 +1,11 @@
+{% extends 'proyectoapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+
 <table class="table table-bordered" style="color: blue;">
     <thead>
         <tr>
@@ -6,7 +14,7 @@
         <tr>
             <th>producto</th>
             <th>cantidad</th>
-            <th>sumaT total</th>
+            <th>suma total</th>
         </tr>
     </thead>
     <tbody>
@@ -57,3 +65,9 @@
     </tfoot>
 
 </table>
+{% else %}
+</br></br></br>
+ <div class="alert alert-danger">Debes hacer ingresar para comprar</div> 
+{% endif %}
+
+{% endblock %}

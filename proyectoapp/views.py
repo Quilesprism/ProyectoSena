@@ -4,7 +4,6 @@ from django.template.loader import get_template
 from carrito.carro import Carro
 from servicios.models import Servicio
 def home(request): 
-    carro=Carro(request)
     return render(request, "proyectoapp/index.html")
 
 
