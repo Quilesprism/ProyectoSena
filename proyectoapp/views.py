@@ -3,9 +3,10 @@ from django.template import Template, Context
 from django.template.loader import get_template
 from carrito.carro import Carro
 from servicios.models import Servicio
+
+
 def home(request): 
     return render(request, "proyectoapp/index.html")
-
 
 def recibo(request): 
     return render(request, "proyectoapp/recibo.html")

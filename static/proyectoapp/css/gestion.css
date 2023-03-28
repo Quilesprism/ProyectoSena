@@ -1,6 +1,6 @@
 body {
   font-family: 'Lora';
-  background: white;
+  background: beige;
 }
 
 h1,
@@ -21,8 +21,8 @@ p {
 }
 
 .site-heading {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   text-transform: uppercase;
   line-height: 1;
   font-family: 'Raleway';
@@ -30,8 +30,8 @@ p {
 
 .site-heading .site-heading-upper {
   display: block;
-  font-size: 2px;
-  font-weight: 800;
+  font-size: 10px;
+  font-weight: 200;
 }
 
 .site-heading .site-heading-lower {
@@ -226,7 +226,7 @@ p {
 }
 
 .footer {
-   background-color: white;
+   background-color: beige;
 }
 
 
@@ -273,4 +273,12 @@ ul.errorlist{
   padding-top: .75rem;
   font-style: italic;
   color: rgb(3, 3, 3);
+}
+
+.login {
+  display: block;
+  font-size: 1rem;
+  text-transform: none;
+  font-weight: 300;
+  margin-top:.5rem;
 }

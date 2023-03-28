@@ -12,24 +12,20 @@
      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
      <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet"> 
      
-
     <!-- Styles -->
     <link href="{% static 'proyectoapp/css/gestion.css' %}" rel="stylesheet">
+    
+    <link rel="shortcut icon" href="{% static 'proyectoapp/img/web.png' %}">
 </head>
 
 <body>
-
-    <h1 class="site-heading text-center text-white d-none d-lg-block">
-      
-        <span class="site-heading-lower">Gestión de Pedidos</span>
-      </h1>
-      <div style="text-align:right; margin-right: 70px;"> 
+      <div class="login" style="text-align:right; margin-right: 70px;"> 
 
       {% if user.is_authenticated %}
-        Bienvenido {{ user.username }} &nbsp; &nbsp; <a href="{% url 'Cerrars' %}">Cerrar sesion</a>
+        Bienvenido {{ user.username }} &nbsp; &nbsp;<button class="btn btn-primary"> <a href="{% url 'Cerrars' %}" style="color: cyan;">Cerrar sesion</a> </button>
 
       {% else %}
-        <a href="{% url 'Login' %}">Login</a> &nbsp; &nbsp; <a href="{% url 'Autenticacion' %}">Registrate</a>
+      <button class="btn btn-primary"><a href="{% url 'Login' %}" style="color: cyan;">Login</a></button> &nbsp; &nbsp; <button class="btn btn-primary"><a href="{% url 'Autenticacion' %}" style="color: cyan;">Registrate</a></button>
         
       {% endif %}
     </div>
@@ -51,10 +47,7 @@
           <li class="nav-item {% if request.path == '/Tienda' %} active {% endif %}px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Tienda' %}">Tienda</a>
          
-          </li>
-          <!--<li class="nav-item {% if request.path == '/Recibos' %} active {% endif %}px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'Recibos' %}">Recibos</a>
-          </li>-->      
+          </li>   
         </ul>
         <button type="button" class="btn btn-link" style="color: black; text-align: justify;" >
           <a class="nav-link text-uppercase text-expanded" href="{% url 'Carros' %}" style="color: black;">Carrito</a>
@@ -62,12 +55,10 @@
       </div>
     </div>
   </nav>
-
-
    <!-- cambinate -->
-    {% block content %}
+    {%block content %}
 
-
+    
     {% endblock %}
     <!-- Footer -->
     <footer class="footer text-faded text-center py-5">
