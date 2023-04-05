@@ -22,7 +22,7 @@ p {
 
 .site-heading {
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   text-transform: uppercase;
   line-height: 1;
   font-family: 'Raleway';
@@ -41,7 +41,7 @@ p {
 }
 
 .page-section {
-  margin-top: 5rem;
+  margin-top: 10px;
   margin-bottom: 5rem;
 }
 
@@ -69,7 +69,8 @@ p {
   font-size: 1rem;
   text-transform: none;
   font-weight: 300;
-  margin-top:.5rem;
+  margin-top: 10rem;
+  
 }
 
 .bg-faded {
@@ -273,12 +274,4 @@ ul.errorlist{
   padding-top: .75rem;
   font-style: italic;
   color: rgb(3, 3, 3);
-}
-
-.login {
-  display: block;
-  font-size: 1rem;
-  text-transform: none;
-  font-weight: 300;
-  margin-top:.5rem;
 }
