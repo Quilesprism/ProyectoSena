@@ -19,7 +19,7 @@
 </head>
 
 <body>
-      <div class="login" style="text-align:right; margin-right: 70px;"> 
+      <div class="inicioB" id="incioB" > 
 
       {% if user.is_authenticated %}
         Bienvenido {{ user.username }} &nbsp; &nbsp;<button class="btn btn-primary"> <a href="{% url 'Cerrars' %}" style="color: cyan;">Cerrar sesion</a> </button>

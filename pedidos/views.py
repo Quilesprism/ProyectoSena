@@ -10,35 +10,6 @@ from django.utils.html import strip_tags
 from django.core.mail import send_mail
 
 
-@login_required(login_url="/autenticacion/logear")
-def procesarP(request):
-    pedido = Pedido.objects.create(user=request.user)
-    carro = Carro(request) # Se coge el carro
-    pdi = list() #Lista en la que iran los elementos que tiene un pedido del carro
-    for key, value in carro.carro.items(): #for que recorre los productos del carro
-        pdi.append(LineaPedido(  
-            producto_id=key,
-            cantidad=value['cantidad'],
-            user=request.user,
-            pedido=pedido
-            ))
-
-    LineaPedido.objects.bulk_create(pdi) #crea registros en la base de datos
-
-    enviar_mail( 
-        pedido=pedido, 
-        pdi=pdi, 
-        nombreusuraio=request.user.username,
-        emailusuario=request.user.email
-
-    )
-       
-    #mensaje de fin
-    messages.success(request, "El pedido se ha creado")
-
-    return redirect('../tienda/tienda')
-
-
 def enviar_mail(**kwargs):
     asunto = "Pedido realizado"
     mensaje= render_to_string("emails/pedido.html", {
@@ -50,6 +21,34 @@ def enviar_mail(**kwargs):
 
     mensajeT=strip_tags(mensaje)
     fromemail="quilesxasterin8@gmail.com"
-    to=kwargs.get("emailusuario")
-    #to="qagonzalezr@correo.udistrital.edu.co"
+    #to=#kwargs.get("emailusuario")
+    to="qagonzalezr@correo.udistrital.edu.co"
     send_mail(asunto, mensajeT, fromemail, [to], html_message=mensaje)
+
+
+@login_required(login_url="/autenticacion/logear")
+def procesarP(request):
+    pedido = Pedido.objects.create(user=request.user)
+    carro = Carro(request) # Se coge el carro
+    pdi = list() #Lista en la que iran los elementos que tiene un pedido del carro
+    for key, value in carro.carro.items(): #for que recorre los productos del carro
+        context = LineaPedido(producto_id = key,cantidad= value['cantidad'], user=request.user, pedido=pedido)
+        pdi.append(context)
+
+
+
+    LineaPedido.objects.bulk_create(pdi) #crea registros en la base de datos
+    
+    enviar_mail( 
+        pedido=pedido, 
+        pdi=pdi, 
+        nombreusuraio=request.user.username,
+        emailusuario=request.user.email
+    )
+       
+    #mensaje de fin
+    #messages.success(request, "El pedido se ha creado")
+
+    return redirect('../tienda/tienda')
+
+

@@ -1,6 +1,6 @@
 body {
   font-family: 'Lora';
-  background: beige;
+  background: azure;
 }
 
 h1,
@@ -77,6 +77,13 @@ p {
   background-color: rgba(255, 255, 255, 0.85);
 }
 
+.inicioB{
+  text-align:right; 
+  margin-right: 70px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
 #mainNav {
   background-color: rgb(105, 152, 240);
   font-family: 'Raleway';
@@ -96,7 +103,7 @@ p {
   text-decoration: underline;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 990px) {
   #mainNav .navbar-nav .nav-item .nav-link {
     font-size: 0.9rem;
   }
@@ -227,7 +234,7 @@ p {
 }
 
 .footer {
-   background-color: beige;
+   background-color: azure;
 }
 
 
