@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .carro import Carro
 from tienda.models import Producto
 from django.shortcuts import redirect
-
+from django.http import JsonResponse
 
 
 def agregarP(request, producto_id):
@@ -30,3 +30,7 @@ def limpiarC(request, producto_id):
 
 def carro(request):
     return render(request, "carro/widget.html")
+
+
+
+
